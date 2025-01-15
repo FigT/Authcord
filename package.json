@@ -10,7 +10,9 @@
   "license": "MIT",
   "keywords": [],
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc",
+    "start": "node build/index.js",
+    "cs": "npm run compile && npm run start"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
