@@ -15,7 +15,7 @@ async function main() {
   }
 
   client.once(Events.ClientReady, readyClient => {
-    console.log(`Logged in as ${readyClient.user?.tag}`);
+    console.log(`Logged in as ${readyClient.user?.tag}, need to invite the bot? https://discord.com/oauth2/authorize?client_id=${process.env.DISCORD_CLIENT_ID}&permissions=68608&integration_type=0&scope=applications.commands+bot`);
 
     Array.from(readyClient.guilds.cache.values()).forEach(async guild => {
       await commandHandler.registerCommands(guild.id);
