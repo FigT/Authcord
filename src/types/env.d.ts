@@ -4,5 +4,6 @@ declare namespace NodeJS {
     readonly DISCORD_CLIENT_ID: string;
 
     readonly DATABASE_URL: string;
+    readonly ENCRYPTION_KEY: string;
   }
 }
