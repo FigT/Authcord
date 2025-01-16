@@ -23,6 +23,7 @@
     "@prisma/client": "^6.2.1",
     "discord.js": "^14.17.3",
     "dotenv": "^16.4.7",
+    "otpauth": "^9.3.6",
     "prisma-field-encryption": "^1.6.0"
   }
 }

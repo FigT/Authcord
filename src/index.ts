@@ -3,7 +3,7 @@ import * as process from 'node:process';
 import { Client, Events } from 'discord.js';
 import { PrismaClient } from '@prisma/client'
 import * as commandHandler from './handlers/commandHandler';
-import {fieldEncryptionExtension} from "prisma-field-encryption";
+import {fieldEncryptionExtension} from 'prisma-field-encryption';
 
 dotenv.config();
 
@@ -11,6 +11,7 @@ export const client = new Client({
   intents: ['Guilds', 'GuildMessages'],
 });
 
+console.log("Connecting to database...");
 export const prisma = new PrismaClient().$extends(
   fieldEncryptionExtension({
     encryptionKey: process.env.ENCRYPTION_KEY

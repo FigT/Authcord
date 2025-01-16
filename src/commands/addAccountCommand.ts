@@ -1,7 +1,7 @@
-import {Command} from "./command";
-import {CommandInteraction, MessageFlagsBitField} from "discord.js";
-import {AuthType} from "@prisma/client";
-import {prisma} from "../index";
+import {Command} from './command';
+import {CommandInteraction, MessageFlagsBitField} from 'discord.js';
+import {AuthType} from '@prisma/client';
+import {prisma} from '../index';
 
 export class AddAccountCommand extends Command {
 

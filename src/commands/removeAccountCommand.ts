@@ -1,6 +1,6 @@
-import {Command} from "./command";
-import {AutocompleteInteraction, CommandInteraction, MessageFlagsBitField} from "discord.js";
-import {prisma} from "../index";
+import {Command} from './command';
+import {AutocompleteInteraction, CommandInteraction, MessageFlagsBitField} from 'discord.js';
+import {prisma} from '../index';
 
 export class RemoveAccountCommand extends Command {
 
