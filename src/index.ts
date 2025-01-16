@@ -15,7 +15,7 @@ export const prisma = new PrismaClient().$extends(
   fieldEncryptionExtension({
     encryptionKey: process.env.ENCRYPTION_KEY
   })
-)
+);
 
 
 

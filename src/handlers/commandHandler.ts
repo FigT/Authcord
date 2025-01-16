@@ -1,12 +1,14 @@
 import { REST, Routes, SlashCommandBuilder, CommandInteraction } from 'discord.js';
 import * as process from 'node:process';
-import { DebugCommand } from '../commands/debugCommand';
 import {Command} from "../commands/command";
+import {AddAccountCommand} from "../commands/addAccountCommand";
+import {RemoveAccountCommand} from "../commands/removeAccountCommand";
 
 
 
 export const commands = new Map<string, Command>()
-  .set('debug', new DebugCommand());
+  .set('add-account', new AddAccountCommand())
+  .set('remove-account', new RemoveAccountCommand());
 
 const rest = new REST({version: '10'}).setToken(process.env.DISCORD_TOKEN);
 
