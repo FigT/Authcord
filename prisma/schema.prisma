@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  name   String   @id @unique
+  secret String   /// @encrypted?mode=strict
+  type   AuthType
+  digits Int
+
+  @@map("accounts")
+}
+
+enum AuthType {
+  TOTP
+  HOTP
+}

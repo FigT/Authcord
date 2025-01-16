@@ -1,13 +1,18 @@
 import dotenv from 'dotenv';
 import * as process from 'node:process';
 import { Client, Events } from 'discord.js';
+import { PrismaClient } from '@prisma/client'
+import * as commandHandler from './handlers/commandHandler';
+
 dotenv.config();
 
 export const client = new Client({
   intents: ['Guilds', 'GuildMessages'],
 });
 
-import * as commandHandler from './handlers/commandHandler';
+const prisma = new PrismaClient()
+
+
 
 async function main() {
   if (!process.env.DISCORD_TOKEN || !process.env.DISCORD_CLIENT_ID || !process.env.DATABASE_URL) {
