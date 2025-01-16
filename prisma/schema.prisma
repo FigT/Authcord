@@ -8,10 +8,11 @@ datasource db {
 }
 
 model Account {
-  name   String   @id @unique
-  secret String   /// @encrypted?mode=strict
-  type   AuthType
-  digits Int
+  name    String   @id @unique
+  secret  String /// @encrypted?mode=strict
+  type    AuthType
+  counter Int? // HOTP only
+  digits  Int
 
   @@map("accounts")
 }

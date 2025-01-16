@@ -3,6 +3,7 @@ CREATE TABLE `accounts` (
     `name` VARCHAR(191) NOT NULL,
     `secret` VARCHAR(191) NOT NULL,
     `type` ENUM('TOTP', 'HOTP') NOT NULL,
+    `counter` INTEGER NULL,
     `digits` INTEGER NOT NULL,
 
     UNIQUE INDEX `accounts_name_key`(`name`),
