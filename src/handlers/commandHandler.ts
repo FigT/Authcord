@@ -4,6 +4,7 @@ import {Command} from '../commands/command';
 import {AddAccountCommand} from '../commands/addAccountCommand';
 import {RemoveAccountCommand} from '../commands/removeAccountCommand';
 import {GetTokenCommand} from '../commands/getTokenCommand';
+import {logger} from '../index';
 
 
 export const commands = new Map<string, Command>()
@@ -15,7 +16,7 @@ const rest = new REST({version: '10'}).setToken(process.env.DISCORD_TOKEN);
 
 export async function registerCommands(guildId: string) {
   try {
-    console.log('Refreshing application (/) commands...');
+    logger.info('Refreshing application (/) commands...');
 
     await rest.put(
       Routes.applicationGuildCommands(process.env.DISCORD_CLIENT_ID, guildId),
@@ -24,8 +25,8 @@ export async function registerCommands(guildId: string) {
       },
     );
 
-    console.log('Successfully reloaded application (/) commands.');
-  } catch (e) {
-    console.error(e);
+    logger.info('Successfully reloaded application (/) commands.');
+  } catch (e: any) {
+    logger.error(e);
   }
 }
