@@ -9,6 +9,7 @@ A simple discord bot for providing TOTP and HOTP authentication.
 - [x] Secrets are encrypted at rest (in a MySQL DB) using AES-256-GCM
 - [ ] Caching (planned)
 - [ ] Accounts limited to specific roles (planned)
+- [ ] Fancy embeds (planned)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
